@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  role_name: snmp_mib_manager
+  author: Connor McBrine-Ellis
+  description: Install and maintain SNMP MIB files on your systems.  Tested with Ubuntu 20.04.
+  license: MIT
+  min_ansible_version: "2.4"
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - "all"

@@ -1,0 +1,26 @@
+---
+- name: Install SNMP packages
+  apt:
+    name:
+    - snmp
+    - snmp-mibs-downloader
+    state: present
+  become: true
+
+- name: Install SNMP MIBs
+  copy:
+    src: mibs/
+    dest: /usr/share/snmp/mibs/ansible
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+
+- name: Configure SNMP to allow MIBs
+  copy:
+    src: snmp.conf
+    dest: /etc/snmp/snmp.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
